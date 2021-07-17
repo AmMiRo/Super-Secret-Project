@@ -1,7 +1,7 @@
 import React from "react";
 
-function SignUpView() {
+function AuthView() {
     return <div></div>;
 }
 
-export default SignUpView;
+export default AuthView;
