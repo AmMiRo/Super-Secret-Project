@@ -1,11 +1,10 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 
-import { initialStateReducer as initialState } from "./initial-state/initialStateReducer";
+import { messagingReducer as messaging } from "./messaging/messagingReducer";
+import { userAuthReducer as userAuth } from "./userAuth/userAuthReducer";
+import { userSearchReducer as userSearch } from "./userSearch/userSearchReducer";
 
-// if/when using multiple state folders, combine reducers here
-// const rootReducer = combineReducers({initialState, <other states>});
+const rootReducer = combineReducers({ messaging, userAuth, userSearch });
 
-// if when using multiple state folders, use this store
-// export const store = createStore(rootReducer, applyMiddleware(thunk));
-export const store = createStore(initialState, applyMiddleware(thunk));
+export const store = createStore(rootReducer, applyMiddleware(thunk));
