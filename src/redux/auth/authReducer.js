@@ -5,7 +5,7 @@ import {
     REGISTER_START,
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
-} from "./userAuthActions";
+} from "./authActions";
 
 const initialState = {
     userId: null,

@@ -8,7 +8,7 @@ export const signIn = () => async (dispatch) => {
     dispatch({ type: SIGN_IN_START });
 
     try {
-        response = await axios.get("url goes here", {
+        response = await axios.post("url goes here", {
             user: "user info goes here",
         });
 
@@ -26,7 +26,7 @@ export const registerUser = () => async (dispatch) => {
     dispatch({ type: REGISTER_START });
 
     try {
-        response = await axios.get("url goes here", {
+        response = await axios.post("url goes here", {
             user: "user info goes here",
         });
 

@@ -1,4 +1,4 @@
-import {} from "./userSearchActions";
+import {} from "./userActions";
 
 const initialState = {};
 
