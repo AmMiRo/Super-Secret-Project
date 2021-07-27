@@ -1,59 +1,5 @@
 import axios from "axios";
 
-// authenticate user
-export const AUTH_USER_START = "AUTH_USER_START";
-export const AUTH_USER_SUCCESS = "AUTH_USER_SUCCESS";
-export const AUTH_USER_FAILURE = "AUTH_USER_FAILURE";
-export const authUser = () => async (dispatch) => {
-    dispatch({ type: AUTH_USER_START });
-
-    try {
-        response = await axios.post("url goes here", {
-            userInfo: "userInfo goes here",
-        });
-
-        dispatch({ type: AUTH_USER_SUCCESS, payload: response.data });
-    } catch (error) {
-        dispatch({ type: AUTH_USER_FAILURE, payload: error });
-    }
-};
-
-// log out user
-export const LOG_OUT_START = "LOG_OUT_START";
-export const LOG_OUT_SUCCESS = "LOG_OUT_SUCCESS";
-export const LOG_OUT_FAILURE = "LOG_OUT_FAILURE";
-export const authUser = () => async (dispatch) => {
-    dispatch({ type: LOG_OUT_START });
-
-    try {
-        response = await axios.post("url goes here", {
-            userId: "userId goes here",
-        });
-
-        dispatch({ type: LOG_OUT_SUCCESS, payload: response.data });
-    } catch (error) {
-        dispatch({ type: LOG_OUT_FAILURE, payload: error });
-    }
-};
-
-// add new user
-export const ADD_USER_START = "ADD_USER_START";
-export const ADD_USER_SUCCESS = "ADD_USER_SUCCESS";
-export const ADD_USER_FAILURE = "ADD_USER_FAILURE";
-export const authUser = () => async (dispatch) => {
-    dispatch({ type: ADD_USER_START });
-
-    try {
-        response = await axios.post("url goes here", {
-            userInfo: "userInfo goes here",
-        });
-
-        dispatch({ type: ADD_USER_SUCCESS, payload: response.data });
-    } catch (error) {
-        dispatch({ type: ADD_USER_FAILURE, payload: error });
-    }
-};
-
 // get all users
 export const GET_USERS_START = "GET_USERS_START";
 export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS";

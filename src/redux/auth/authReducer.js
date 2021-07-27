@@ -5,12 +5,16 @@ import {
     REGISTER_START,
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
+    LOG_OUT_START,
+    LOG_OUT_SUCCESS,
+    LOG_OUT_FAILURE,
 } from "./authActions";
 
 const initialState = {
     userId: null,
     username: null,
     isAuthorizing: false,
+    isAuthorized: false,
     error: null,
 };
 
@@ -25,6 +29,7 @@ export const userAuthReducer = (state = initialState, action) => {
                 isAuthorizing: false,
                 userId: action.payload.userId,
                 username: action.payload.username,
+                isAuthorized: true,
             };
         case SIGN_IN_FAILURE:
             return { ...state, isAuthorizing: false, error: action.payload };
@@ -38,9 +43,17 @@ export const userAuthReducer = (state = initialState, action) => {
                 isAuthorizing: false,
                 userId: action.payload.userId,
                 username: action.payload.username,
+                isAuthorized: true,
             };
         case REGISTER_FAILURE:
             return { ...state, isAuthorizing: false, error: action.payload };
+
+        case LOG_OUT_START:
+            return state;
+        case LOG_OUT_SUCCESS:
+            return { ...initialState };
+        case LOG_OUT_FAILURE:
+            return { ...state, error: action.payload };
 
         // default
         default:

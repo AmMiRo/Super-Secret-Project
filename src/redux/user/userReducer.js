@@ -1,14 +1,4 @@
 import {
-    DELETE_MESSAGE_FAILURE,
-    GET_MESSAGE_FAILURE,
-} from "../messaging/messagingActions";
-import {
-    AUTH_USER_START,
-    AUTH_USER_SUCCESS,
-    AUTH_USER_FAILURE,
-    ADD_USER_START,
-    ADD_USER_SUCCESS,
-    ADD_USER_FAILURE,
     GET_USERS_START,
     GET_USERS_SUCCESS,
     GET_USERS_FAILURE,
@@ -29,22 +19,6 @@ const initialState = {
 
 export const userSearchReducer = (state = initialState, action) => {
     switch (action.type) {
-        // auth user
-        case AUTH_USER_START:
-            return { ...state, isLoading: true };
-        case AUTH_USER_SUCCESS:
-            return { ...state, isLoading: false, user: action.payload };
-        case AUTH_USER_FAILURE:
-            return { ...state, isLoading: false, error: action.payload };
-
-        // add user
-        case ADD_USER_START:
-            return { ...state, isLoading: true };
-        case ADD_USER_SUCCESS:
-            return { ...state, isLoading: false, user: action.payload };
-        case ADD_USER_FAILURE:
-            return { ...state, isLoading: false, error: action.payload };
-
         // get all users
         case GET_USERS_START:
             return { ...state, isLoading: true };
