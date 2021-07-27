@@ -1,3 +1,3 @@
-import MessagingContainer from "./MessagingContainer";
+import { MessagingContainer as Messaging } from "./MessagingContainer";
 
-export default MessagingContainer;
+export default Messaging;

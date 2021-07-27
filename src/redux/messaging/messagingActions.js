@@ -4,7 +4,7 @@ import axios from "axios";
 export const GET_MESSAGES_START = "GET_MESSAGES_START";
 export const GET_MESSAGES_SUCCESS = "GET_MESSAGES_SUCCESS";
 export const GET_MESSAGES_FAILURE = "GET_MESSAGES_FAILURE";
-export const fetchMessages = () => async (dispatch) => {
+export const getMessages = () => async (dispatch) => {
     dispatch({ type: GET_MESSAGES_START });
 
     try {
@@ -22,12 +22,12 @@ export const fetchMessages = () => async (dispatch) => {
 export const GET_MESSAGE_START = "GET_MESSAGE_START";
 export const GET_MESSAGE_SUCCESS = "GET_MESSAGE_SUCCESS";
 export const GET_MESSAGE_FAILURE = "GET_MESSAGE_FAILURE";
-export const fetchMessages = () => async (dispatch) => {
+export const getMessage = (messageId) => async (dispatch) => {
     dispatch({ type: GET_MESSAGE_START });
 
     try {
         response = await axios.get("url goes here", {
-            messageId: "messageId goes here",
+            messageId: messageId,
         });
 
         dispatch({ type: GET_MESSAGE_SUCCESS, payload: response.data });

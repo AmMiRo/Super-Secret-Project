@@ -18,7 +18,7 @@ const initialState = {
     error: null,
 };
 
-export const userAuthReducer = (state = initialState, action) => {
+export const authReducer = (state = initialState, action) => {
     switch (action.type) {
         // user sign in
         case SIGN_IN_START:

@@ -17,7 +17,7 @@ const initialState = {
     error: null,
 };
 
-export const userSearchReducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action) => {
     switch (action.type) {
         // get all users
         case GET_USERS_START:

@@ -1,6 +1,8 @@
 import React from "react";
 
-function MessagingView() {
+function MessagingView(props) {
+    const { messages, users } = props;
+
     return <div></div>;
 }
 
