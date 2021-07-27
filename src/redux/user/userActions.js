@@ -20,13 +20,11 @@ export const getUsers = () => async (dispatch) => {
 export const EDIT_USER_START = "EDIT_USER_START";
 export const EDIT_USER_SUCCESS = "EDIT_USER_SUCCESS";
 export const EDIT_USER_FAILURE = "EDIT_USER_FAILURE";
-export const editUser = () => async (dispatch) => {
+export const editUser = (userData) => async (dispatch) => {
     dispatch({ type: EDIT_USER_START });
 
     try {
-        response = await axios.put("url goes here", {
-            userInfo: "userInfo goes here",
-        });
+        response = await axios.put("url goes here", userData);
 
         dispatch({ type: EDIT_USER_SUCCESS, payload: response.data });
     } catch (error) {
@@ -38,13 +36,11 @@ export const editUser = () => async (dispatch) => {
 export const DELETE_USER_START = "DELETE_USER_START";
 export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS";
 export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE";
-export const deleteUser = () => async (dispatch) => {
+export const deleteUser = (userId) => async (dispatch) => {
     dispatch({ type: DELETE_USER_START });
 
     try {
-        response = await axios.delete("url goes here", {
-            userId: "userId goes here",
-        });
+        response = await axios.delete("url goes here", userId);
 
         dispatch({ type: DELETE_USER_SUCCESS, payload: response.data });
     } catch (error) {
