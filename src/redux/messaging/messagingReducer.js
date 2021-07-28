@@ -14,12 +14,16 @@ import {
     DELETE_MESSAGE_START,
     DELETE_MESSAGE_SUCCESS,
     DELETE_MESSAGE_FAILURE,
+    UPLOAD_PHOTO_START,
+    UPLOAD_PHOTO_SUCCESS,
+    UPLOAD_PHOTO_FAILURE,
 } from "./messagingActions";
 
 const initialState = {
     isLoading: false,
-    isUpdating: false,
     messages: {},
+    photoHasBeenUploaded: false,
+    photoUrl: "",
     error: null,
 };
 
@@ -51,38 +55,50 @@ export const messagingReducer = (state = initialState, action) => {
 
         // send message
         case SEND_MESSAGE_START:
-            return { ...state, isUpdating: true };
+            return state;
         case SEND_MESSAGE_SUCCESS:
             const updatedMessages = { ...state.messages };
             const updatedMessageId = action.payload.id;
             updatedMessages[updatedMessageId] = action.payload;
 
-            return { ...state, isUpdating: false, messages: updatedMessages };
+            return { ...state, messages: updatedMessages };
         case SEND_MESSAGE_FAILURE:
-            return { ...state, isUpdating: false, error: action.payload };
+            return { ...state, error: action.payload };
 
         // edit message
         case EDIT_MESSAGE_START:
-            return { ...state, isUpdating: true };
+            return state;
         case EDIT_MESSAGE_SUCCESS:
             const updatedMessages = { ...state.messages };
             const updatedMessageId = action.payload.id;
             updatedMessages[updatedMessageId] = action.payload;
 
-            return { ...state, isUpdating: false, messages: updatedMessages };
+            return { ...state, messages: updatedMessages };
         case EDIT_MESSAGE_FAILURE:
-            return { ...state, isUpdating: false, error: action.payload };
+            return { ...state, error: action.payload };
 
         // delete messag
         case DELETE_MESSAGE_START:
-            return { ...state, isUpdating: true };
+            return state;
         case DELETE_MESSAGE_SUCCESS:
             const updatedMessages = { ...state.messages };
             delete updatedMessages[action.payload];
 
-            return { ...state, isUpdating: false, messages: updatedMessages };
+            return { ...state, messages: updatedMessages };
         case DELETE_MESSAGE_FAILURE:
-            return { ...state, isUpdating: false, error: action.payload };
+            return { ...state, error: action.payload };
+
+        // upload photo
+        case UPLOAD_PHOTO_START:
+            return state;
+        case UPLOAD_PHOTO_SUCCESS:
+            return {
+                ...state,
+                photoHasBeenUploaded: true,
+                photoUrl: action.payload,
+            };
+        case UPLOAD_PHOTO_FAILURE:
+            return { ...state, error: action.payload };
 
         // default
         default:
