@@ -84,6 +84,12 @@ export const sendMessage = (messageId) => async (dispatch) => {
     }
 };
 
+// set recipient id
+export const UPDATE_RECIPIENT_ID = "UPDATE_RECIPIENT_ID";
+export const setRecipientId = (recipientId) => (dispatch) => {
+    dispatch({ type: UPDATE_RECIPIENT_ID, payload: recipientId });
+};
+
 // upload photo
 export const UPLOAD_PHOTO_START = "UPLOAD_PHOTO_START";
 export const UPLOAD_PHOTO_SUCCESS = "UPLOAD_PHOTO_SUCCESS";

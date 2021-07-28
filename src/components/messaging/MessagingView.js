@@ -3,19 +3,20 @@ import MessagesSideBar from "./messagesSideBar";
 import MessageForm from "./messageForm";
 
 function MessagingView(props) {
-    const { isCreatingMessage, setCreatingMessage } = props;
+    const { isCreatingMessage, setIsCreatingMessage } = props;
 
     return (
         <div>
-            <MessagesSideBar />
+            <MessagesSideBar setIsCreatingMessage={setIsCreatingMessage} />
             <div>
+                {/* will display a button to create a new message or a message form */}
                 {!isCreatingMessage && (
-                    <button onClick={() => setCreatingMessage(true)}>
+                    <button onClick={() => setIsCreatingMessage(true)}>
                         New Message
                     </button>
                 )}
                 {isCreatingMessage && (
-                    <MessageForm setCreatingMessage={setCreatingMessage} />
+                    <MessageForm setIsCreatingMessage={setIsCreatingMessage} />
                 )}
             </div>
         </div>

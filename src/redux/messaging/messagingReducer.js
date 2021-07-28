@@ -17,11 +17,13 @@ import {
     UPLOAD_PHOTO_START,
     UPLOAD_PHOTO_SUCCESS,
     UPLOAD_PHOTO_FAILURE,
+    UPDATE_RECIPIENT_ID,
 } from "./messagingActions";
 
 const initialState = {
     isLoading: false,
     messages: {},
+    recipientId: "",
     photoHasBeenUploaded: false,
     photoUrl: "",
     error: null,
@@ -99,6 +101,10 @@ export const messagingReducer = (state = initialState, action) => {
             };
         case UPLOAD_PHOTO_FAILURE:
             return { ...state, error: action.payload };
+
+        // set recipient id
+        case UPDATE_RECIPIENT_ID:
+            return { ...state, recipientId: action.payload };
 
         // default
         default:
