@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
     getMessages,
     setRecipientId,
-} from "../../redux/messaging/messagingActions";
+} from "../../../redux/messaging/messagingActions";
 import MessagesSideBarView from "./MessagesSideBarView";
 
 function MessagesSideBarContainer(props) {

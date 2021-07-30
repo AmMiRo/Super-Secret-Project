@@ -15,7 +15,10 @@ function AuthContainer() {
     const [userInfo, setUserInfo] = useState({ username: "", password: "" });
 
     const handleChanges = function (e) {
-        setUserInfo(e.target.value);
+        const value = e.target.value;
+        const name = e.target.name;
+
+        setUserInfo({ ...userInfo, [name]: value });
     };
 
     const handleSubmit = function (e) {
