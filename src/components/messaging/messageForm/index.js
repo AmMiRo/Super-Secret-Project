@@ -1,3 +1,3 @@
-import { MessageFormContainer as MessageForm } from "./MessageFormContainer";
+import MessageForm from "./MessageFormContainer";
 
 export default MessageForm;

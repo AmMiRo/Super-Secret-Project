@@ -30,11 +30,7 @@ function LogInView(props) {
                 </button>
             </form>
             <p>If you are a new user, click here to register:</p>
-            <button
-                onClick={() => {
-                    setAuthType(authTypes.signUp);
-                }}
-            ></button>
+            <button onClick={() => setAuthType(authTypes.signUp)}></button>
         </div>
     );
 }

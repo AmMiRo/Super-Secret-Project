@@ -12,6 +12,7 @@ function AuthView(props) {
         handleSubmit,
     } = props;
 
+    // returns appropriate form based on auth type
     if (authType === authTypes.signIn) {
         return (
             <LogInView

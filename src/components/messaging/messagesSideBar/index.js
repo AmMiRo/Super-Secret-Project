@@ -1,3 +1,3 @@
-import { MessagesSideBarContainer as MessagesSideBar } from "./MessagesSideBarContainer";
+import MessagesSideBar from "./MessagesSideBarContainer";
 
 export default MessagesSideBar;

@@ -50,6 +50,8 @@ function MessageFormContainer(props) {
         <MessageFormView
             setIsCreatingMessage={setIsCreatingMessage}
             message={message}
+            setMessage={setMessage}
+            blankMessage={blankMessage}
             handleChanges={handleChanges}
             handleSubmit={handleSubmit}
         />

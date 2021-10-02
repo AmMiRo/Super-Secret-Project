@@ -1,3 +1,3 @@
-import { UserSearchContainer as UserSearch } from "./UserSearchContainer";
+import UserSearch from "./UserSearchContainer";
 
 export default UserSearch;

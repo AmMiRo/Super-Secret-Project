@@ -6,10 +6,11 @@ function MessagesSideBarView() {
 
     return (
         <div>
-            {/* will return and render a MessageCardView for each message in messages array */}
+            {/* renders a MessageCardView for each message */}
             {messages.map((message) => {
                 return (
                     <MessageCardView
+                        key={message.id}
                         message={message}
                         replyToMessage={replyToMessage}
                         userId={userId}
