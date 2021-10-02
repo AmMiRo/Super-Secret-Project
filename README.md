@@ -1,2 +1,3 @@
 # Super-Secret-Project
-Messaging app foundation
+
+This app was created as a starting point for a simple messaging app made at the request of a professional acquaintance.
